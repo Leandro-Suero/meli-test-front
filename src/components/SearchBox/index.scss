@@ -1,0 +1,48 @@
+@import "../../assets/styles/colors";
+
+header {
+  background-color: $primary-color;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+}
+nav {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    margin-top: 4px;
+    margin-right: 20px;
+  }
+}
+
+.nav-search {
+  width: 100%;
+  display: inline-flex;
+
+  .nav-search-input {
+    width: calc(100% - 36px);
+    flex-grow: 1;
+    font-size: 18px;
+    padding: 4px;
+    height: 36px;
+  }
+
+  .nav-search-btn {
+    cursor: pointer;
+    background-color: $grey-lightest;
+    width: 36px;
+    height: 36px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

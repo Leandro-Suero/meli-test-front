@@ -11,8 +11,8 @@ import SearchBox from "./components/SearchBox";
 function App() {
   return (
     <div className="App">
-      <SearchBox />
       <Router>
+        <SearchBox />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/items" component={SearchResults} />
