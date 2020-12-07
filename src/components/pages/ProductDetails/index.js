@@ -37,7 +37,7 @@ function ProductDetails() {
         <div className="ui-pdp-content__row">
           <div className="ui-pdp__col-main">
             <div className="ui-pdp-image-container">
-              <img className="ui-pdp-image" src={product.picture} alt="Product Picture"/>
+              <img className="ui-pdp-image" src={product.picture} alt="Product"/>
             </div>
           </div>
           <div className="ui-pdp__col-side">

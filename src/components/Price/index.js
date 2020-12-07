@@ -6,7 +6,7 @@ import { MoneySymbolConverter, NumberWithThousandMarker } from "../../libs/Conve
 import shipping_2x from '../../assets/img/ic_shipping_2x.png';
 import './index.scss'
 
-function index({ price: { currency, amount, decimals }, free_shipping }) {
+function Price({ price: { currency, amount, decimals }, free_shipping }) {
   return (
     <div className="ui-pdp-price">
       <div className={"price-tag"}>
@@ -22,9 +22,9 @@ function index({ price: { currency, amount, decimals }, free_shipping }) {
   );
 }
 
-index.propTypes = {
+Price.propTypes = {
   price: PricePropType,
   free_shipping: PropTypes.bool.isRequired,
 };
 
-export default index;
+export default Price;

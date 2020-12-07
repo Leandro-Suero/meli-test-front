@@ -1,23 +1,23 @@
 @import "../../assets/styles/colors";
 @import "../../assets/styles/variables";
 
-.ui-pdp-price {
-  margin: $big-spacing 0;
+.ui-pcard-price {
+  margin-top: 0;
+  margin-bottom: $big-spacing;
   display: flex;
 
   .price-tag {
     color: $grey-darkest;
-    font-size: 46px;
+    font-size: 24px;
 
     .price-tag-decimals {
-      font-size: 35px;
+      font-size: 18px;
       margin-left: 2px;
     }
   }
 
   .shipping-tag {
     margin-left: 10px;
-    height: 100%;
     display: inline-flex;
     align-items: center;
     justify-content: center;

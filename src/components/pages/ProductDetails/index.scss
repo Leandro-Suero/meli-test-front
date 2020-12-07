@@ -10,7 +10,6 @@
   .ui-pdp-content {
     grid-column-start: 2;
     grid-column-end: 3;
-    width: 100%;
     padding: 0 $big-spacing;
     background-color: $white;
   }
@@ -22,7 +21,6 @@
   .ui-pdp__col-main {
     grid-column-start: 1;
     grid-column-end: 2;
-    width: 100%;
   }
   .ui-pdp__col-side {
     grid-column-start: 2;

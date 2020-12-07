@@ -1,0 +1,57 @@
+@import "../../assets/styles/colors";
+@import "../../assets/styles/variables";
+
+.ui-pcard-content__row {
+  display: grid;
+  grid-template-columns: 8fr 2fr;
+
+  .ui-pcard__col-main {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    display: flex;
+  }
+  .ui-pcard__col-side {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin-top: $small-spacing;
+  }
+}
+
+.ui-pcard-image-container {
+  margin: $small-spacing $small-spacing $small-spacing 0;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .ui-pcard-image {
+    width: 180px;
+  }
+}
+
+.ui-pcard-header {
+  margin: $small-spacing $small-spacing $small-spacing 0;
+  width: 100%;
+
+  a {
+    text-decoration: none;
+  }
+
+  .ui-pcard-title {
+    font-size: 18px;
+    color: $grey-darkest;
+    margin: 0;
+
+    &:hover {
+      color: black;
+    }
+  }
+}
+
+.ui-pcard-condition {
+  font-size: 12px;
+  color: $grey-dark;
+  text-transform: capitalize;
+  margin-top: $small-spacing;
+}
