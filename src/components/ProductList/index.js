@@ -2,17 +2,23 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import ProductCard from "../ProductCard";
+import NoProducts from "../NoProducts";
+import { ProductPropType } from "../../libs/PropTypeValues";
 
-function ProductList(props) {
-  return (
+function ProductList({ products }) {
+  return products.length === 0 || !products ? (
+    <NoProducts />
+  ) : (
     <div>
-      <h2>List of products</h2>
-      <ProductCard />
-      <ProductCard />
+      {products.map((product) => (
+        <ProductCard product={product} key={product.id} />
+      ))}
     </div>
   );
 }
 
-ProductList.propTypes = {};
+ProductList.propTypes = {
+  products: PropTypes.arrayOf(ProductPropType).isRequired,
+};
 
 export default ProductList;

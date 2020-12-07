@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import axios from "axios";
 import "./App.scss";
 
 import Home from "./components/pages/Home";
@@ -9,6 +10,9 @@ import NotFound from "./components/pages/NotFound";
 import SearchBox from "./components/SearchBox";
 
 function App() {
+  //default domain for all future axios calls
+  axios.defaults.baseURL = process.env.REACT_APP_MY_MIDDLEWARE_BASEURL;
+
   return (
     <div className="App">
       <Router>

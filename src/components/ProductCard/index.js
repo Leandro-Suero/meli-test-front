@@ -1,17 +1,21 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
 
-function ProductCard(props) {
+import { ProductPropType } from "../../libs/PropTypeValues";
+
+function ProductCard({ product }) {
   return (
     <div>
-      <h3>Product card</h3>
+      <p>{product.picture}</p>
+      <p>{product.price.amount}<span>.{product.price.decimals}</span></p>
+      <p>{product.free_shipping}</p>
+      <p>{product.title}</p>
+      <p>{product.condition}</p>
     </div>
-  )
+  );
 }
 
 ProductCard.propTypes = {
+  product: ProductPropType,
+};
 
-}
-
-export default ProductCard
-
+export default ProductCard;

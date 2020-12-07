@@ -1,17 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 
-function ProductDetails(props) {
+function ProductDetails({ product }) {
   return (
     <div>
-      <h1>Product Details</h1>
+      <h1>{product.title}</h1>
     </div>
-  )
+  );
 }
 
-ProductDetails.propTypes = {
+ProductDetails.propTypes = {};
 
-}
-
-export default ProductDetails
-
+export default ProductDetails;
