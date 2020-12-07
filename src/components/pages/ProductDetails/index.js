@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import './index.scss';
 
 import Spinner from "../../Spinner";
+import Price from "../../Price";
+import { ProductConditionConverter } from '../../../libs/Converter'
 
 function ProductDetails() {
   const [loading, setLoading] = useState(true);
@@ -29,16 +32,44 @@ function ProductDetails() {
   return (
     error !== "" ? 'Hubo un error' : 
     loading ? <Spinner /> : 
-    <div>
-      <p>{product.picture}</p>
-      <p>{product.condition}</p>
-      <p>{product.sold_quantity}</p>
-      <p>{product.title}</p>
-      <p>{product.price.amount}<span>.{product.price.decimals}</span></p>
-      <p>{product.free_shipping}</p>
-      <button>Comprar</button>
-      <h3>Descripción</h3>
-      <p>{product.description}</p>
+    <div className="ui-pdp-container">
+      <div className="ui-pdp-content">
+        <div className="ui-pdp-content__row">
+          <div className="ui-pdp__col-main">
+            <div className="ui-pdp-image-container">
+              <img className="ui-pdp-image" src={product.picture} alt="Product Picture"/>
+            </div>
+          </div>
+          <div className="ui-pdp__col-side">
+            <div className="ui-pdp-header">
+              <div className="ui-pdp-header__subtitle">
+                <span className="ui-pdp-subtitle">
+                  <span className="ui-pdp-subtitle__condition">
+                    {ProductConditionConverter(product.condition)}
+                  </span> - {product.sold_quantity} vendidos
+                </span>
+              </div>
+              <h1 className="ui-pdp-title">
+                {product.title}
+              </h1>
+            </div>
+            <Price price={product.price} free_shipping={product.free_shipping} />
+            <div className="ui-pdp-actions">
+              <button className="ui-pdp-actions__cta">Comprar</button>  
+            </div>
+          </div>
+        </div>
+        <div className="ui-pdp-content__row">
+          <div className="ui-pdp__col-main">
+            <div className="ui-pdp-description">
+              <h2 className="ui-pdp-description__title">
+                Descripción del producto
+              </h2>
+              <p className="ui-pdp-description__content">{product.description}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
