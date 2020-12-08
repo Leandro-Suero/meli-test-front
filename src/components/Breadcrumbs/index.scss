@@ -1,0 +1,33 @@
+@import "../../assets/styles/colors";
+@import "../../assets/styles/variables";
+
+.ui-breadcrumbs {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+
+  .ui-breadcrumbs-list {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin: $small-spacing 0;
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+  }
+}
+
+.ui-breadcrumbs-item {
+  font-size: 14px;
+
+  .ui-breadcrumbs-item__link {
+    text-decoration: none;
+    color: $grey-dark;
+  }
+
+  & + .ui-breadcrumbs-item::before {
+    content: ">";
+    color: $grey-light;
+    margin: 0 5px;
+  }
+}

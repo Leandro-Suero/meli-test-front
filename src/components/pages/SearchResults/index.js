@@ -3,6 +3,7 @@ import axios from 'axios'
 
 import ProductList from "../../ProductList";
 import Spinner from "../../Spinner";
+import Breadcrumbs from "../../Breadcrumbs";
 import { useQuery } from '../../../hooks/useQuery'
 
 function SearchResults() {
@@ -34,6 +35,7 @@ function SearchResults() {
     error !== ''? error :
     loading? <Spinner/> :
     <div>
+      <Breadcrumbs data={categories} />
       <ProductList products={products} />
     </div>
   );
