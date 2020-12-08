@@ -1,0 +1,34 @@
+@import "../../../assets/styles/colors";
+@import "../../../assets/styles/variables";
+
+.ui-not-found {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .ui-not-found-card {
+    margin-top: $big-spacing;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    column-gap: $small-spacing;
+    padding: $small-spacing;
+    border-radius: 4px;
+    text-align: center;
+
+    .ui-not-found-card__title {
+      color: $grey-darkest;
+      font-size: 20px;
+    }
+    .ui-not-found-card__link {
+      color: $grey-dark;
+      text-decoration: none;
+      font-size: 14px;
+
+      &:hover {
+        color: $grey-darkest;
+      }
+    }
+  }
+}

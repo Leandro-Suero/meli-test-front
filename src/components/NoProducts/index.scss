@@ -1,0 +1,35 @@
+@import "../../assets/styles/colors";
+@import "../../assets/styles/variables";
+
+.ui-search-rescue {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .ui-search-rescue-card {
+    background-color: $white;
+    display: flex;
+    justify-content: center;
+    column-gap: $small-spacing;
+    padding: $small-spacing;
+    border-radius: 4px;
+
+    .ui-search-rescue-card__icon {
+      width: 140px;
+      height: 140px;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+    }
+  }
+}
+.ui-search-rescue-card__info {
+  line-height: 1.25;
+
+  .ui-search-rescue-card__title {
+    color: $grey-darkest;
+  }
+  .ui-search-rescue-card__item {
+    color: $grey-dark;
+  }
+}

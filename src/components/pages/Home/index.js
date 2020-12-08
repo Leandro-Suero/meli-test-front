@@ -1,17 +1,17 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
+import './index.scss'
 
-function Home(props) {
+function Home() {
   return (
-    <div>
-      <h1>Home Page</h1>
-    </div>
+    <main className="ui-home">
+      <div className="ui-home-info">
+        <p className="ui-home-info__name">Leandro Maximiliano Suero</p>
+        <h1 className="ui-home-info__title">Mercado Libre - Frontend Test</h1>
+        <p className="ui-home-info__date">Diciembre 2020</p>
+      </div>
+    </main>
   )
-}
-
-Home.propTypes = {
-
 }
 
 export default Home
