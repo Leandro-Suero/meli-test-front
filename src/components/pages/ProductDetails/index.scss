@@ -34,12 +34,16 @@
 .ui-pdp-image-container {
   width: 680px;
   height: 680px;
+  min-width: 680px;
+  min-height: 680px;
   display: flex;
   align-items: center;
   justify-content: center;
 
   .ui-pdp-image {
     width: 100%;
+    max-width: 680px;
+    max-height: 680px;
   }
 }
 
