@@ -32,12 +32,12 @@ function ProductDetails() {
   return (
     error !== "" ? 'Hubo un error' : 
     loading ? <Spinner /> : 
-    <div className="ui-pdp-container">
+    <section className="ui-pdp-container">
       <div className="ui-pdp-content">
         <div className="ui-pdp-content__row">
           <div className="ui-pdp__col-main">
             <div className="ui-pdp-image-container">
-              <img className="ui-pdp-image" src={product.picture} alt="Product"/>
+              <img className="ui-pdp-image" src={product.picture} alt="Producto"/>
             </div>
           </div>
           <div className="ui-pdp__col-side">
@@ -70,7 +70,7 @@ function ProductDetails() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

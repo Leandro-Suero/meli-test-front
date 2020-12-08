@@ -13,7 +13,7 @@ function ProductCard({ product }) {
           <div className="ui-pcard__col-main">
             <div className="ui-pcard-image-container">
               <Link to={`/items/${product.id}`}>
-                <img className="ui-pcard-image" src={product.picture} alt="Product"/>
+                <img className="ui-pcard-image" src={product.picture} alt="Producto"/>
               </Link>
             </div>
             <div className="ui-pcard-header">
