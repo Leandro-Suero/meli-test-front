@@ -1,0 +1,43 @@
+@import "../../assets/styles/colors";
+@import "../../assets/styles/variables";
+
+.ui-error {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .ui-error-card {
+    margin-top: $big-spacing;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    column-gap: $small-spacing;
+    padding: $small-spacing;
+    border-radius: 4px;
+    text-align: center;
+
+    .ui-error-card__title {
+      color: $grey-darkest;
+      font-size: 20px;
+    }
+    .ui-error-card__desc {
+      color: $grey-dark;
+      font-size: 16px;
+      margin: 0;
+    }
+    .ui-error-card__link {
+      color: $grey-dark;
+      text-decoration: none;
+      font-size: 14px;
+      padding: 8px 16px;
+      margin: $small-spacing auto;
+      border-radius: 4px;
+
+      &:hover {
+        color: $grey-darkest;
+        background-color: $primary-color;
+      }
+    }
+  }
+}

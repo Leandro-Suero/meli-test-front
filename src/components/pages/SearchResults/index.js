@@ -5,6 +5,7 @@ import axios from 'axios'
 import ProductList from "../../ProductList";
 import Spinner from "../../Spinner";
 import Breadcrumbs from "../../Breadcrumbs";
+import ShowError from "../../ShowError";
 import { useQuery } from '../../../hooks/useQuery'
 
 function SearchResults() {
@@ -27,13 +28,13 @@ function SearchResults() {
     })
     .catch(err => {
       console.error(err);
-      setError('Hubo un error');
+      setError(err.message);
       setLoading(false);
     });
   }, [q])
 
   return (
-    error !== ''? error :
+    error !== ''? <ShowError message={error} /> :
     loading? <Spinner/> :
     <div>
       <Helmet>

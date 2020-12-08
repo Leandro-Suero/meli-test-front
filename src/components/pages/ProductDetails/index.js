@@ -5,6 +5,7 @@ import axios from "axios";
 import './index.scss';
 
 import Breadcrumbs from "../../Breadcrumbs";
+import ShowError from "../../ShowError";
 import Spinner from "../../Spinner";
 import Price from "../../Price";
 import { ProductConditionConverter } from '../../../libs/Converter'
@@ -26,13 +27,13 @@ function ProductDetails() {
       })
       .catch((err) => {
         console.error(err);
-        setError("Hubo un error");
+        setError(err.message);
         setLoading(false);
       });
   }, [id]);
 
   return (
-    error !== "" ? 'Hubo un error' : 
+    error !== "" ? <ShowError message={error} /> : 
     loading ? <Spinner /> : 
     <>
       <Helmet>
