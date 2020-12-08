@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import {Helmet} from "react-helmet";
 import axios from 'axios'
 
 import ProductList from "../../ProductList";
@@ -35,6 +36,10 @@ function SearchResults() {
     error !== ''? error :
     loading? <Spinner/> :
     <div>
+      <Helmet>
+            <title>{`Mercado Libre - Compra ${q} ahora mismo`}</title>
+            <meta name="description" content={`Listado de ${q} para recibir en tu casa, elige, paga y listo.`} />
+      </Helmet>
       <Breadcrumbs data={categories} />
       <ProductList products={products} />
     </div>
