@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import axios from "axios";
 import './index.scss';
 
+import Breadcrumbs from "../../Breadcrumbs";
 import Spinner from "../../Spinner";
 import Price from "../../Price";
 import { ProductConditionConverter } from '../../../libs/Converter'
@@ -38,6 +39,7 @@ function ProductDetails() {
         <title>{`Mercado Libre - ${id} - ${product.title}`}</title>
         <meta name="description" content={`Todo sobre ${product.title}, fotos, cantidad disponible, estado, compra ahora mismo para recibirlo en tu casa!`} />
       </Helmet>
+      <Breadcrumbs data={["HOWTO","Agregar category_id al API","Fetch /categories/category_id","Usar path_from_root", "Construir Breadcrumbs"]} />
       <section className="ui-pdp-container">
         <div className="ui-pdp-content">
           <div className="ui-pdp-content__row">
