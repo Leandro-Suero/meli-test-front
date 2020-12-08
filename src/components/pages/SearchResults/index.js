@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from "react";
-import {Helmet} from "react-helmet";
+import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import axios from 'axios'
 
 import ProductList from "../../ProductList";
