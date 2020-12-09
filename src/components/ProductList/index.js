@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import ProductCard from "../ProductCard";
 import NoProducts from "../NoProducts";
 import { ProductPropType } from "../../libs/PropTypeValues";
-import './index.scss';
+import "./index.scss";
 
 function ProductList({ products }) {
   return products.length === 0 || !products ? (

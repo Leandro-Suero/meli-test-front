@@ -1,9 +1,9 @@
 import React from "react";
-import './index.scss'
+import "./index.scss";
 
 export default function index() {
   return (
-    <div className="spinner">
+    <div className="spinner" data-testid="spinner">
       <svg
         fill="currentColor"
         width="48"
