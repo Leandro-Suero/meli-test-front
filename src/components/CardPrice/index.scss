@@ -23,3 +23,11 @@
     justify-content: center;
   }
 }
+
+@media only screen and (max-width: $media-breakpoint) {
+  .ui-pcard-price {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+}

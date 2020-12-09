@@ -23,3 +23,11 @@
     justify-content: center;
   }
 }
+
+@media only screen and (max-width: $media-breakpoint) {
+  .ui-pdp-price {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -62,6 +62,7 @@ Supuestos que utilicé para avanzar rápidamente con el desarrollo, sin necesida
 - Se ha dividido el blunde y se cargan lazy las vistas de Resultados de Busqueda, Detalle de Producto y Not Found.
 - Se actualiza automáticamente la metadata de acuerdo a la sección actual.
 - Para reducir la duplicidad de código y facilitar el mantenimiento se crearon librerias en la carpeta "src/libs", así como un custom hook en "src/hooks".
+- No hay solicitud de diseño responsible, sin embargo, agregue algunas media-queries para evitar que el diseño se rompa mucho en dispositivos mas pequeños, por ese motivo no esta escrito como mobile first y mas que nada es un reordenamiento de layout solamente.
 
 [^ *regresar al índice*](#INDEX)
 
