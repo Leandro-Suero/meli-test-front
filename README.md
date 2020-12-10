@@ -6,6 +6,7 @@
 3. [SUPUESTOS](#3.-SUPUESTOS)
 4. [EXTRAS](#4.-EXTRAS)
 5. [DEMOS ONLINE](#5.-DEMOS-ONLINE)
+6. [BRANCHS](#6.-BRANCHS)
 
 ## 1. SCRIPTS
 In the project directory, you can run:
@@ -71,5 +72,16 @@ Supuestos que utilicé para avanzar rápidamente con el desarrollo, sin necesida
 ## 5. DEMOS ONLINE
 - [Ver DEMO ONLINE del FRONTEND React](https://meli-test-front.netlify.app/)
 - [Ver DEMO ONLINE del BACKEND NodeJS](https://meli-test-back.herokuapp.com/api)
+
+[^ *regresar al índice*](#INDEX)
+
+---
+
+## 6. BRANCHS
+Como era contradictorio lo solicitado por el diseño de las vistas y los limites de la api a construir es que en un branch respeté las vistas y modifique la API y en otro a la inversa.
+- `master`: 
+respeto los limites de la API, y en la vista, respeto el diseño pero tengo que rellenar con otra información en 2 vistas. En los resultados de busqueda en lugar de la ciudad muestro el estado del producto y en la vista de detalle del producto genero las Breadcrumbs con un array fijo de información para recordar esta decisión.
+- `RespetoVistasPeroIgnoroApi`: 
+en este branch como su nombre lo indica, respeto el diseño de las vistas y agrego a la Api la información faltante aunque no este incluida en su documentación entregada.
 
 [^ *regresar al índice*](#INDEX)
