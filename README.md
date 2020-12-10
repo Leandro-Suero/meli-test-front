@@ -1,13 +1,21 @@
 # Test Practico - Frontend - Leandro Suero
 
 ## INDEX
-1. [SCRIPTS](#1.-SCRIPTS)
-2. [COMO USAR](#2.-COMO-USAR)
-3. [SUPUESTOS](#3.-SUPUESTOS)
-4. [EXTRAS](#4.-EXTRAS)
-5. [DEMOS ONLINE](#5.-DEMOS-ONLINE)
+- [Test Practico - Frontend - Leandro Suero](#test-practico---frontend---leandro-suero)
+  - [INDEX](#index)
+  - [SCRIPTS](#scripts)
+    - [`npm start`](#npm-start)
+    - [`npm test`](#npm-test)
+    - [`npm run build`](#npm-run-build)
+  - [COMO USAR](#como-usar)
+  - [SUPUESTOS](#supuestos)
+  - [EXTRAS](#extras)
+  - [DEMOS ONLINE](#demos-online)
+  - [BRANCHS](#branchs)
+    - [`master`:](#master)
+    - [`RespetoVistasPeroIgnoroApi`:](#respetovistasperoignoroapi)
 
-## 1. SCRIPTS
+## SCRIPTS
 In the project directory, you can run:
 
 ### `npm start`
@@ -26,7 +34,7 @@ The build is minified and the filenames include the hashes.\
 
 ---
 
-## 2. COMO USAR
+## COMO USAR
 
 Para utilizar el proyecto de frontend (este mismo) deberías:
 - Crear y configurar tu archivo ".env", se incluye un archivo ".env.example" como ejemplo con el endpoint local y el de la demo hosteada.
@@ -40,7 +48,7 @@ Para ejecutar el proyecto de backend ([Repositorio GitHub NodeJS](https://github
 
 ---
 
-## 3. SUPUESTOS
+## SUPUESTOS
 Supuestos que utilicé para avanzar rápidamente con el desarrollo, sin necesidad de feedback (fin de semana largo).
 - No es necesario generar diferentes "branch".
 - El precio devuelto por la API de Meli debe ser dividido en dos partes, por un lado la parte entera y por otro la decimal, ambas como enteros. La parte decimal es 0 por defecto, en caso de un precio original sin decimales.
@@ -55,7 +63,7 @@ Supuestos que utilicé para avanzar rápidamente con el desarrollo, sin necesida
 
 ---
 
-## 4. EXTRAS
+## EXTRAS
 - Se presentan las pruebas unitarias de los componentes en su propia carpeta, realizando un mock de la API en caso de ser necesario.
 - Se presenta un test end-to-end desde el home hasta llegar al boton de "Comprar" de un producto en la vista de detalle de producto. Se encuentra en la carpeta src/tests. Este utiliza la API realizada en NodeJS.
 - Se presentan componentes para cumplimentar la funcionalidad normal del sitio, como ser NotFound, mensaje cuando no hay resultados de busqueda, errores, etc.
@@ -68,8 +76,19 @@ Supuestos que utilicé para avanzar rápidamente con el desarrollo, sin necesida
 
 ---
 
-## 5. DEMOS ONLINE
+## DEMOS ONLINE
 - [Ver DEMO ONLINE del FRONTEND React](https://meli-test-front.netlify.app/)
 - [Ver DEMO ONLINE del BACKEND NodeJS](https://meli-test-back.herokuapp.com/api)
+
+[^ *regresar al índice*](#INDEX)
+
+---
+
+## BRANCHS
+Como era contradictorio lo solicitado por el diseño de las vistas y los limites de la api a construir es que en un branch respeté las vistas y modifique la API y en otro a la inversa.
+### `master`: 
+respeto los limites de la API, y en la vista, respeto el diseño pero tengo que rellenar con otra información en 2 vistas. En los resultados de busqueda en lugar de la ciudad muestro el estado del producto y en la vista de detalle del producto genero las Breadcrumbs con un array fijo de información para recordar esta decisión.
+### `RespetoVistasPeroIgnoroApi`: 
+en este branch como su nombre lo indica, respeto el diseño de las vistas y agrego a la Api la información faltante aunque no este incluida en su documentación entregada.
 
 [^ *regresar al índice*](#INDEX)
