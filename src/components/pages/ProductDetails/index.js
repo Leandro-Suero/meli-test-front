@@ -14,6 +14,7 @@ function ProductDetails() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [product, setProduct] = useState([]);
+  const [categories, setCategories] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
@@ -21,8 +22,9 @@ function ProductDetails() {
     setError("");
     axios
       .get(`/api/items/${id}`)
-      .then(({ data: { item } }) => {
+      .then(({ data: { item, categories } }) => {
         setProduct(item);
+        setCategories(categories);
         setLoading(false);
       })
       .catch((err) => {
@@ -45,15 +47,7 @@ function ProductDetails() {
           content={`Todo sobre ${product.title}, fotos, cantidad disponible, estado, compra ahora mismo para recibirlo en tu casa!`}
         />
       </Helmet>
-      <Breadcrumbs
-        data={[
-          "HOWTO",
-          "Agregar category_id al API",
-          "Fetch /categories/category_id",
-          "Usar path_from_root",
-          "Construir Breadcrumbs",
-        ]}
-      />
+      <Breadcrumbs data={categories} />
       <section className="ui-pdp-container">
         <div className="ui-pdp-content">
           <div className="ui-pdp-content__row">
