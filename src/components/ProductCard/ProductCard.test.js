@@ -10,6 +10,7 @@ const product = {
   free_shipping: true,
   price: { currency: "ARS", amount: 123, decimals: 99 },
   condition: "new",
+  seller_city: "Belgrano",
 };
 
 describe("Testing ProductCard Component", () => {
@@ -40,13 +41,13 @@ describe("Testing ProductCard Component", () => {
     const priceElement = getByText(/123/i);
     expect(priceElement).toBeInTheDocument();
   });
-  test("Translate condition correctly", () => {
-    const { getByText } = render(
+  test("Display the seller city", () => {
+    const { getByTestId } = render(
       <Router>
         <ProductCard product={product} />
       </Router>
     );
-    const conditionElement = getByText(/nuevo/i);
-    expect(conditionElement).toBeInTheDocument();
+    const sellerCity = getByTestId("seller_city");
+    expect(sellerCity).toBeInTheDocument();
   });
 });

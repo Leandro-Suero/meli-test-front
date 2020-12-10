@@ -20,7 +20,14 @@ const product = {
   condition: "new",
   sold_quantity: 56,
   description: "telefono celular super bueno",
+  seller_city_name: "Palermo",
 };
+const categories = [
+  "Telefonos",
+  "Celulares",
+  "Celulares Libres",
+  "Tienda pepito",
+];
 
 jest.mock("axios");
 
@@ -29,7 +36,9 @@ describe("Testing ProductDetail Component", () => {
     jest.resetAllMocks();
   });
   test("Call the API for the product", async () => {
-    axios.get = jest.fn().mockResolvedValue({ data: { item: product } });
+    axios.get = jest
+      .fn()
+      .mockResolvedValue({ data: { item: product, categories } });
     const { findByText } = render(
       <HelmetProvider>
         <Router history={history}>
@@ -43,7 +52,9 @@ describe("Testing ProductDetail Component", () => {
     await act(() => Promise.resolve());
   });
   test("Render the product title", async () => {
-    axios.get = jest.fn().mockResolvedValue({ data: { item: product } });
+    axios.get = jest
+      .fn()
+      .mockResolvedValue({ data: { item: product, categories } });
     const { findByText } = render(
       <HelmetProvider>
         <Router history={history}>
@@ -57,7 +68,9 @@ describe("Testing ProductDetail Component", () => {
     expect(titleElement).toBeInTheDocument();
   });
   test("Render the product image", async () => {
-    axios.get = jest.fn().mockResolvedValue({ data: { item: product } });
+    axios.get = jest
+      .fn()
+      .mockResolvedValue({ data: { item: product, categories } });
     const { findByAltText } = render(
       <HelmetProvider>
         <Router history={history}>
@@ -71,7 +84,9 @@ describe("Testing ProductDetail Component", () => {
     expect(imageElement).toBeInTheDocument();
   });
   test("Render the price", async () => {
-    axios.get = jest.fn().mockResolvedValue({ data: { item: product } });
+    axios.get = jest
+      .fn()
+      .mockResolvedValue({ data: { item: product, categories } });
     const { findByText } = render(
       <HelmetProvider>
         <Router history={history}>
@@ -85,7 +100,9 @@ describe("Testing ProductDetail Component", () => {
     expect(priceElement).toBeInTheDocument();
   });
   test("Translate condition correctly", async () => {
-    axios.get = jest.fn().mockResolvedValue({ data: { item: product } });
+    axios.get = jest
+      .fn()
+      .mockResolvedValue({ data: { item: product, categories } });
     const { findByText } = render(
       <HelmetProvider>
         <Router history={history}>
@@ -97,5 +114,21 @@ describe("Testing ProductDetail Component", () => {
     );
     const conditionElement = await findByText(/nuevo/i);
     expect(conditionElement).toBeInTheDocument();
+  });
+  test("Render the breadcrumbs", async () => {
+    axios.get = jest
+      .fn()
+      .mockResolvedValue({ data: { item: product, categories } });
+    const { findByText } = render(
+      <HelmetProvider>
+        <Router history={history}>
+          <Route path="/items/:id">
+            <ProductDetail />
+          </Route>
+        </Router>
+      </HelmetProvider>
+    );
+    const breadcrumbs = await findByText(/pepito/i);
+    expect(breadcrumbs).toBeInTheDocument();
   });
 });

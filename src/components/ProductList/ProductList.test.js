@@ -11,6 +11,7 @@ const products = [
     free_shipping: true,
     price: { currency: "ARS", amount: 123, decimals: 99 },
     condition: "new",
+    seller_city_name: "Belgrano",
   },
   {
     id: "2",
@@ -19,6 +20,7 @@ const products = [
     free_shipping: true,
     price: { currency: "ARS", amount: 321, decimals: 0 },
     condition: "used",
+    seller_city_name: "Palermo",
   },
 ];
 
@@ -32,13 +34,13 @@ describe("Testing ProductList Component", () => {
     const priceElement = getByText(/321/i);
     expect(priceElement).toBeInTheDocument();
   });
-  test("Translate condition correctly of item id 1", () => {
-    const { getByText } = render(
+  test("display the seller city of the items", () => {
+    const { getAllByTestId } = render(
       <Router>
         <ProductList products={products} />
       </Router>
     );
-    const conditionElement = getByText(/nuevo/i);
-    expect(conditionElement).toBeInTheDocument();
+    const sellerCity = getAllByTestId("seller_city");
+    expect(sellerCity.length).toEqual(2);
   });
 });

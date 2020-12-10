@@ -36,7 +36,9 @@ function ProductCard({ product }) {
           {/* Según la documentación de la API solicitada, no está el dato de "Localidad" para mostrar
             aquí como se observa en las specs, por lo tanto muestro en su lugar el "condition" (que no 
              era visible en esta pantalla) para respetar el diseño visualmente */}
-          <span className="ui-pcard-city">{product.seller_city_name}</span>
+          <span className="ui-pcard-city" data-testid="seller_city">
+            {product.seller_city_name}
+          </span>
         </div>
       </div>
     </div>

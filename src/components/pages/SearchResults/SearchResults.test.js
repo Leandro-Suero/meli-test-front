@@ -16,6 +16,7 @@ const items = [
     free_shipping: true,
     price: { currency: "ARS", amount: 123, decimals: 99 },
     condition: "new",
+    seller_city_name: "Belgrano",
   },
   {
     id: "2",
@@ -24,6 +25,7 @@ const items = [
     free_shipping: true,
     price: { currency: "ARS", amount: 321, decimals: 0 },
     condition: "used",
+    seller_city_name: "Palermo",
   },
 ];
 const categories = [
