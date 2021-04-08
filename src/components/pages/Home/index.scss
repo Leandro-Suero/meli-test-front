@@ -10,13 +10,15 @@
     border-radius: 4px;
     text-align: center;
 
-    .ui-home-info__name {
+    &__name {
       font-size: 18px;
     }
-    .ui-home-info__title {
+
+    &__title {
       font-size: 25px;
     }
-    .ui-home-info__date {
+
+    &__date {
       color: #333333;
       font-size: 14px;
     }

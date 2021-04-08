@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-import './index.scss'
+import "./index.scss";
 
 function Home() {
   return (
@@ -11,8 +11,7 @@ function Home() {
         <p className="ui-home-info__date">Diciembre 2020</p>
       </div>
     </main>
-  )
+  );
 }
 
-export default Home
-
+export default Home;

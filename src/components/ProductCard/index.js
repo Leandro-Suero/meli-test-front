@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 import CardPrice from "../CardPrice";
 import { ProductPropType } from "../../libs/PropTypeValues";
-import { ProductConditionConverter } from "../../libs/Converter";
 import "./index.scss";
 
 function ProductCard({ product }) {
@@ -34,8 +33,7 @@ function ProductCard({ product }) {
         </div>
         <div className="ui-pcard__col-side">
           {/* Según la documentación de la API solicitada, no está el dato de "Localidad" para mostrar
-            aquí como se observa en las specs, por lo tanto muestro en su lugar el "condition" (que no 
-             era visible en esta pantalla) para respetar el diseño visualmente */}
+            aquí como se observa en las specs, por lo tanto agrego esa información al filtrado que se realiza en la API */}
           <span className="ui-pcard-city" data-testid="seller_city">
             {product.seller_city_name}
           </span>

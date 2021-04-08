@@ -17,11 +17,11 @@
     border-radius: 4px;
     text-align: center;
 
-    .ui-not-found-card__title {
+    &__title {
       color: $grey-darkest;
       font-size: 20px;
     }
-    .ui-not-found-card__link {
+    &__link {
       color: $grey-dark;
       text-decoration: none;
       font-size: 14px;

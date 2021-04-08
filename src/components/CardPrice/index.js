@@ -12,21 +12,21 @@ import "./index.scss";
 function CardPrice({ price: { currency, amount, decimals }, free_shipping }) {
   return (
     <div className="ui-pcard-price">
-      <div className={"price-tag"}>
-        <span className="price-tag-amount">
+      <div className="ui-pcard-price__tag">
+        <span>
           {`${MoneySymbolConverter(currency)} ${NumberWithThousandMarker(
             amount,
             "."
           )}`}
         </span>
         {decimals !== 0 && (
-          <span className="price-tag-decimals">
+          <span className="ui-pcard-price__tag--decimals">
             <sup>{decimals}</sup>
           </span>
         )}
       </div>
       {free_shipping && (
-        <div className="shipping-tag">
+        <div className="ui-pcard-price__shipping">
           <img src={shipping} alt="Envio Gratis" title="Envio Gratis" />
         </div>
       )}

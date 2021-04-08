@@ -5,22 +5,22 @@
   margin: $big-spacing 0;
   display: flex;
 
-  .price-tag {
+  &__tag {
     color: $grey-darkest;
     font-size: 46px;
 
-    .price-tag-decimals {
+    &--decimals {
       font-size: 35px;
       margin-left: 2px;
     }
-  }
 
-  .shipping-tag {
-    margin-left: 10px;
-    height: 100%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    &__shipping {
+      margin-left: 10px;
+      height: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }
 
