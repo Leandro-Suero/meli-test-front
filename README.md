@@ -11,9 +11,6 @@
   - [SUPUESTOS](#supuestos)
   - [EXTRAS](#extras)
   - [DEMOS ONLINE](#demos-online)
-  - [BRANCHS](#branchs)
-    - [`master`:](#master)
-    - [`RespetoVistasPeroIgnoroApi`:](#respetovistasperoignoroapi)
 
 ## SCRIPTS
 In the project directory, you can run:
@@ -54,9 +51,8 @@ Supuestos que utilicé para avanzar rápidamente con el desarrollo, sin necesida
 - El precio devuelto por la API de Meli debe ser dividido en dos partes, por un lado la parte entera y por otro la decimal, ambas como enteros. La parte decimal es 0 por defecto, en caso de un precio original sin decimales.
 - En la vista de Detalle de Producto la imagen que se muestra debe ser la primera del arreglo de imágenes que se obtiene de la API de Meli en lugar del Thumbnail que es usado en la vista de Resultados de Búsqueda. Debe ser solamente una ya que la documentación solicita "picture" en singular.
 - En la vista de Resultados de Búsqueda para mostrar la Breadcrumbs utilizo el arreglo de categorias que no tiene otro uso. Limito la cantidad de categorías a ser utilizadas como Breadcrumbs a 5 ya que algunas veces son demasiadas.
-- En la vista de Detalle de Producto no tengo información para colocar como Breadcrumbs, sin embargo es solicitado en las especificaciones de diseño. Una opción podría ser traer con la API el "category_id" que refiere al "/categories/{category_id}" en la API de Meli para sacar información del "path_from_root" y de esa forma poder construir un Breadcrumbs. Sin embargo, tendría que ir en contra de la documentación de la API solicitada, por lo tanto muestro unas Breadcrumbs con información ficticia, a fin de cumplir con el diseño.
+- En la vista de Detalle de Producto no tengo información para colocar como Breadcrumbs, sin embargo es posible traer con la API el "category_id" que refiere al "/categories/{category_id}" en la API de Meli para sacar información del "path_from_root" y de esa forma poder construir un Breadcrumbs.
 - Las Breadcrumb no tienen claramente definido el color, parece ser #999999, pero ese contraste no pasa el control de accesibilidad, por lo tanto use el #666666 para los links y dejé el otro para solamente los ">"
-- En el listado de productos, columna derecha, aparece la ciudad donde se vende el producto, pero en la documentación de la API que se solicitó no se encuentra dicho dato {results[0].seller_address.city.name}, por lo tanto para cumplir con el diseño muestro otro dato en ese lugar {condition}.
 - En la pantalla de Detalle del Producto no queda claro si se debe mostrar el icono de "free_shipping", para ser consistente con la vista de Resultados de Búsqueda decidí colocarlo en ambas.
 
 [^ *regresar al índice*](#INDEX)
@@ -79,16 +75,5 @@ Supuestos que utilicé para avanzar rápidamente con el desarrollo, sin necesida
 ## DEMOS ONLINE
 - [Ver DEMO ONLINE del FRONTEND React](https://meli-test-front.netlify.app/)
 - [Ver DEMO ONLINE del BACKEND NodeJS](https://meli-test-back.herokuapp.com/api)
-
-[^ *regresar al índice*](#INDEX)
-
----
-
-## BRANCHS
-Como era contradictorio lo solicitado por el diseño de las vistas y los limites de la api a construir es que en un branch respeté las vistas y modifique la API y en otro a la inversa.
-### `master`: 
-respeto los limites de la API, y en la vista, respeto el diseño pero tengo que rellenar con otra información en 2 vistas. En los resultados de busqueda en lugar de la ciudad muestro el estado del producto y en la vista de detalle del producto genero las Breadcrumbs con un array fijo de información para recordar esta decisión.
-### `RespetoVistasPeroIgnoroApi`: 
-en este branch como su nombre lo indica, respeto el diseño de las vistas y agrego a la Api la información faltante aunque no este incluida en su documentación entregada.
 
 [^ *regresar al índice*](#INDEX)
